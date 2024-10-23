@@ -1,0 +1,41 @@
+body{
+    width: 80%;
+    margin: auto;
+}
+form {
+    text-align: center;
+    margin-top: 20px;
+}
+
+form input{
+    width: 300px;
+    height: 25px;
+    border: 1px solid green;
+}
+
+form button {
+    height: 30px;
+    width: 160px;
+    background-color: green;
+    color: white;
+    border: none;
+    margin-left: 10px;
+}
+
+#container{
+    margin-top: 20px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+#container div{
+    width: 16%;
+    height: 100px;
+    margin: 3px;
+    text-align: center;
+    line-height: 90px;
+    color: white;
+    font-size: 3rem;
+}
