@@ -1,6 +1,6 @@
 const generateNumber = document.forms["generate-numbers"]; //getting the form
 
-generateNumber.addEventListener('submit', function(e){ //adding a submit event
+generateNumber.addEventListener('submit', function (e) { //adding a submit event
     e.preventDefault(); //prevent the form from refreshing when i click submit
     value = generateNumber.querySelector('input').value; //getting the number typed
     for (let number = 1; number <= value; number++) { //generating numbers from one to whatever value typed
@@ -10,30 +10,39 @@ generateNumber.addEventListener('submit', function(e){ //adding a submit event
         div.textContent = number; //added content
         parentDiv.appendChild(div); //appended it parent element
 
-        //function for even and odd numbers
-        function evenOddNumbers() {
-            if (number % 2 == 0) {
-                div.style.backgroundColor = "green";
-            } else {
-                div.style.backgroundColor = "yellow";
-            }
+        //odd and even number check
+        const evenAndOdd = evenOddNumbers(number);
+        if (evenAndOdd) {
+            div.style.backgroundColor = "green";
+        } else {
+            div.style.backgroundColor = "yellow";
         }
-        evenOddNumbers();
 
-        //function for primenumbers
-        function primeNumbers() {
-            if (number === 1) {
-                return number;
-            }
-            for (let i = 2; i < number; i++){
-                if (number % i === 0) {
-                    return number;
-                } 
-            }
+
+        //prime number check
+        const primeNumber = isPrimeNumber(number);
+        if (primeNumber) {
             div.style.backgroundColor = 'red';
         }
-        primeNumbers();
+
     }
-    
-    
 })
+
+//function for even and odd numbers
+function evenOddNumbers(n) {
+    return n % 2 == 0
+}
+
+//function for primenumbers
+function isPrimeNumber(n) {
+    if (n === 1) {
+        return false;
+    }
+    for (let i = 2; i < n; i++) {
+        if (n % i === 0) {
+            return false;
+        }
+    }
+    return true;
+}
+
