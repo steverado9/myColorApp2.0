@@ -5,9 +5,10 @@ generateNumber.addEventListener('submit', function (e) { //adding a submit event
     value = generateNumber.querySelector('input').value; //getting the number typed
     for (let number = 1; number <= value; number++) { //generating numbers from one to whatever value typed
         const parentDiv = document.querySelector("#container"); //getting the parent div element
-        //create and append element
+        //create, add class and append element
         const div = document.createElement('div'); //create div element
         div.textContent = number; //added content
+        div.classList.add('child-div'); //added className 
         parentDiv.appendChild(div); //appended it parent element
 
         //odd and even number check
@@ -45,4 +46,21 @@ function isPrimeNumber(n) {
     }
     return true;
 }
+
+//function to clear the input
+const div = document.querySelector('#container')
+generateNumber.addEventListener('keyup', function(e){
+    const childDivs = document.querySelectorAll('#container div');
+    Array.from(childDivs).forEach(function(childDiv){
+        if(childDiv.className = "child-div") {
+            div.removeChild(childDiv)
+        }
+    })
+})
+
+
+    
+    
+
+
 
