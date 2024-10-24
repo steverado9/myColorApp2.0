@@ -48,12 +48,12 @@ function isPrimeNumber(n) {
 }
 
 //function to clear the input
-const div = document.querySelector('#container')
-generateNumber.addEventListener('keyup', function(e){
-    const childDivs = document.querySelectorAll('#container div');
-    Array.from(childDivs).forEach(function(childDiv){
-        if(childDiv.className = "child-div") {
-            div.removeChild(childDiv)
+const div = document.querySelector('#container') //get the div element
+generateNumber.addEventListener('keyup', function(e){ //i added an event to the form
+    const childDivs = document.querySelectorAll('#container div'); // i got the children of the parent div element
+    Array.from(childDivs).forEach(function(childDiv){ //converted the node list to an array
+        if(childDiv.className = "child-div") { //check the className using if statement
+            div.removeChild(childDiv) //delete child
         }
     })
 })
